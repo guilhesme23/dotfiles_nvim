@@ -11,8 +11,6 @@
 -- - plugin pra buffers?
 -- - fugitive (git?)
 
-print("Loaded configurations")
-
 -- Basic settings
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -23,6 +21,8 @@ vim.opt.expandtab = true
 vim.opt.listchars:append({space = '␣'})
 vim.opt.list = true
 vim.opt.laststatus = 3
+vim.cmd [[colorscheme tokyonight-moon]]
 -- Remaps
 require('remaps')
 require('plugins')
+require("mason").setup()

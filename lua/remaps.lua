@@ -38,3 +38,4 @@ vim.keymap.set({'n', 'v'}, '<S-A-l>', '<C-w>2>')
 vim.keymap.set({'n', 'v'}, '<C-h>', ':bprevious<cr>')
 vim.keymap.set({'n', 'v'}, '<C-l>', ':bnext<cr>')
 
+vim.keymap.set({'n', 'v'}, '<leader>be', '<cmd>e .<cr>')
