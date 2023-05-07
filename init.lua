@@ -1,8 +1,11 @@
 -- Plugins: - treesitter (better parsing)
 -- - treesitter
 -- - telescope (fuzzy find)
+-- - lsp-config
+-- - nvim-cmp or lsp-cmp?
+-- - luasnip
+-- - Setup diagnostics
 -- - NerdTree? n sei ainda
--- - lsp-zero
 -- - lualine
 -- - theme (n lembro qual era ainda)
 -- - plugin pra buffers?
@@ -22,4 +25,4 @@ vim.opt.list = true
 vim.opt.laststatus = 3
 -- Remaps
 require('remaps')
-
+require('plugins')
