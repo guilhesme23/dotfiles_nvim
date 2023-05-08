@@ -5,7 +5,7 @@ require('mason-lspconfig').setup({
     ensure_installed = {'tsserver', 'rust_analyzer'}
 })
 
-local on_attach = function()
+local on_attach = function(client)
     -- Define LSP Keymaps to current buffer
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, {buffer=0, desc='Display information about element under cursor'})
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {buffer=0, desc='Jump to definition'})
@@ -21,6 +21,10 @@ local on_attach = function()
     local builtin = require('telescope.builtin')
     if builtin then
         vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {buffer=0, desc='Find references of token under cursor'})
+    end
+    if client.name == 'clangd' then
+        vim.keymap.set('n', '<leader>ppt', '<cmd>!make test<cr>', {buffer=0, desc = "Run make test"})
+        vim.keymap.set('n', '<leader>ppc', '<cmd>!make target=%<cr>', {buffer=0, desc = "Run make"})
     end
 end
 
