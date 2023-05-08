@@ -16,6 +16,12 @@ local on_attach = function()
     vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, {buffer=0, desc='Jump to next diagnostic error'})
     vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, {buffer=0, desc='Jump to prev diagnostic error'})
     vim.keymap.set('n', '<leader>\\', vim.lsp.buf.code_action, {buffer=0, desc='Show possible code actions'})
+
+    -- Telescope lsp keymaps
+    local builtin = require('telescope.builtin')
+    if builtin then
+        vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {buffer=0, desc='Find references of token under cursor'})
+    end
 end
 
 require("mason-lspconfig").setup_handlers {
@@ -59,11 +65,11 @@ cmp.setup({
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
-        ['<C-y>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-        { name = 'luasnip' }, -- For luasnip users.
+        { name = 'luasnip' },
     }, {
         { name = 'buffer' },
     })
