@@ -16,6 +16,7 @@ local on_attach = function(client)
     vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, {buffer=0, desc='Jump to next diagnostic error'})
     vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, {buffer=0, desc='Jump to prev diagnostic error'})
     vim.keymap.set('n', '<leader>\\', vim.lsp.buf.code_action, {buffer=0, desc='Show possible code actions'})
+    vim.keymap.set({'n', 'v'}, '=', vim.lsp.buf.format, {buffer=0, desc='Format code'})
 
     -- Telescope lsp keymaps
     local builtin = require('telescope.builtin')

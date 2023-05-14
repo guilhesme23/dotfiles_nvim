@@ -36,4 +36,17 @@ return require('packer').startup(function(use)
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
+    use {
+        "jose-elias-alvarez/null-ls.nvim",
+        config = function()
+            local nls = require('null-ls')
+            if nls then
+                nls.setup {
+                    sources = {
+                        nls.builtins.formatting.prettier
+                    }
+                }
+            end
+        end
+    }
 end)
