@@ -17,6 +17,14 @@ vim.opt.listchars:append({space = '␣'})
 vim.opt.list = true
 vim.opt.laststatus = 3
 vim.cmd [[colorscheme tokyonight-moon]]
+
+vim.filetype.add({
+    extension = {
+        handlebars = "html",
+        hbs = "html"
+    }
+})
+
 -- Remaps
 require('remaps')
 require('plugins')
