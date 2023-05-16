@@ -49,6 +49,20 @@ require("mason-lspconfig").setup_handlers {
                 }
             }
         }
+    end,
+    ["html"] = function ()
+        require('lspconfig').html.setup {
+            filetypes = {"html", "handlebars"}
+        }
+    end,
+    ["yamlls"] = function ()
+        require('lspconfig').yamlls.setup {
+            settings = {
+                yaml = {
+                    keyOrdering = false
+                }
+            }
+        }
     end
 }
 
