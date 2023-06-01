@@ -4,6 +4,9 @@ require('nvim-treesitter.configs').setup {
     highlight = {
         enable = true
     },
+    autotag = {
+        enable = true
+    },
     incremental_selection = {
         enable = true,
         keymaps = {

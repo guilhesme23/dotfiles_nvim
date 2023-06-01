@@ -10,7 +10,7 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cmdheight = 0
-vim.opt.tabstop = 4
+vim.opt.tabstop = 2
 vim.opt.shiftwidth = 0
 vim.opt.expandtab = true
 vim.opt.listchars:append({space = '␣'})
